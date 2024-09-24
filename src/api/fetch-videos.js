@@ -24,7 +24,7 @@ export const fetchVideo = async (id) => {
     `https://www.googleapis.com/youtube/v3/videos?id=${id}&key=${apiKey}`
   );
 
-  url.searchParams.set("part", "snippet");
+  url.searchParams.set("part", "snippet, contentDetails");
   url.searchParams.set("type", "video");
 
   try {

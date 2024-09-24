@@ -9,7 +9,7 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 
-const VideoItem = ({ video }) => {
+const VideoItem = async ({ video }) => {
   return (
     <Card className="h-fit">
       <CardContent className="p-0">
