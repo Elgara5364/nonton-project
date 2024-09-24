@@ -5,7 +5,6 @@ import { fetchVideos } from "@/api/fetch-videos";
 
 const Videos = async ({ searchParams }) => {
   const videos = await fetchVideos(searchParams.title);
-  // console.log(videos.items[0]);
 
   return (
     <section className="px-10">

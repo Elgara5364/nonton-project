@@ -2,10 +2,15 @@ import { apiKey } from "@/lib/constant";
 
 export const fetchVideos = async (title) => {
   let url = new URL(
-    `https://www.googleapis.com/youtube/v3/search?q=${
-      title === undefined ? "beginagainkorea" : title
-    }&key=${apiKey}`
+    `https://www.googleapis.com/youtube/v3/search?key=${apiKey}`
   );
+
+  if (title) {
+    url.searchParams.set("q", title);
+  } else {
+    url.searchParams.set("chart", "mostPopular");
+    url.searchParams.set("regionCode", "ID");
+  }
 
   url.searchParams.set("maxResults", "20");
   url.searchParams.set("part", "snippet");
